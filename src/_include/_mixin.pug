@@ -1,0 +1,100 @@
+//--------------------------------------
+//- GlobalNav
+//--------------------------------------
+mixin gnav(path,current)
+    nav.uk-offcanvas-bar.p-sp-nav-menu-block
+        ul.sp-nav-menu
+            if current == 'home'
+                li(class='current'): span ナビゲーション1
+            else
+                li: a(href=path + '/gnav1/') ナビゲーション1
+
+            if current == 'gnav2'
+                li(class='current'): span ナビゲーション2
+            else
+                li: a(href=path + '/gnav2/') ナビゲーション2
+
+//--------------------------------------
+//- Header
+//--------------------------------------
+mixin header(path, current)
+    + fbJs()
+    header.header
+        .l-header
+            - var a ='uk-navbar';
+            nav.uk-navbar-container.l-gnav(uk-navbar="")
+                h1.uk-navbar-item.uk-logo
+                    a(href="/index.html")
+                        img(src='/assets/images/common/logo.png',width='120',alt="Geek Bear")
+                .uk-offcanvas-content
+                    .uk-navbar-right
+                        //-burgerメニュー
+                        a.uk-button.uk-navbar-toggle(href='#offcanvas-usage',uk-toggle='')
+                            span(uk-navbar-toggle-icon='')
+                            span.uk-margin-small-left Menu
+
+                        #offcanvas-usage(uk-offcanvas='').p-sp-nav-menu-block
+                            +gnav(path, current)
+//--------------------------------------
+//- Footer
+//--------------------------------------
+mixin footer()
+    footer.footor
+        + shareBtn
+        p.copy Copyright &copy 2017 . All rights reserved
+
+
+
+//--------------------------------------
+//-  breadcrumb
+//--------------------------------------
+mixin breadcrumb(...items)
+    .breadcrumb
+        ul
+            li
+                a(href='/') home
+            each item in items
+                if(item.next)
+                    li
+                        a(href='/#{item.dir}') #{item.pageName}
+                else
+                    li.is-current
+                        span #{item.pageName}
+
+//--------------------------------------
+//- SNS
+//--------------------------------------
+mixin shareBtn
+    .c-social-button-block
+        ul
+            li
+                .fb-like(data-href='https://www.facebook.com/ここは変更', data-layout='button_count', data-action='like', data-show-faces='false', data-share='true')
+            li
+                a.twitter-share-button(href='https://twitter.com/share', data-url='ここは変更', data-lang='ja', data-related='ここは変更', data-hashtags='ここは変更') ツイート
+                script.
+                    !function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                        if (!d.getElementById(id)) {
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = p + '://platform.twitter.com/widgets.js';
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }
+                    }(document, 'script', 'twitter-wjs');
+
+//--------------------------------------
+//- facebookJS
+//--------------------------------------
+mixin fbJs()
+    #fb-root
+    script.
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+

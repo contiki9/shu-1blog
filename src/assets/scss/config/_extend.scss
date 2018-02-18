@@ -1,0 +1,200 @@
+﻿
+
+/* module
+   ---------------------------------------------------------- */
+%ex-pos-center{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+%ex-clearfix {
+  display: block;
+  *zoom: 1;
+  &:after {
+    display: block;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    content: "";
+  }
+}
+%ex-ellipsis {//改行させない
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+%ex-break-word{ //改行させる
+  word-break : break-all;
+  word-wrap: break-word;
+  white-space: normal;
+  display: block;
+}
+%ex-notes{
+  @include cnt-font-size($font-xsml);
+  line-height: 1.3em;
+  > li{
+    text-indent: 1rem;
+    padding-left: -1rem;
+  }
+}
+
+%ex-hover:hover,
+%ex-hover:hover img {
+  filter:alpha(opacity=80);
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+  transition: 0.5s;
+}
+
+@include mq(){
+  .ex-sp-hidden{
+    display: none;
+  }
+  .ex-sp-visible{
+    display: block;
+  }
+}
+
+@include mq(pc) {
+  .ex-pc-hidden {
+    display: none;
+  }
+  .ex-pc-visible {
+    display: block;
+  }
+}
+
+//Base Font
+%ex-font-family{
+   font-family: 'Robot','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3','Noto Sans Japanese', sans-serif;
+}
+%ex-font-aws{
+   font-family: FontAwesome;
+   display: inline-block;
+   margin-right:.5em;
+}
+
+//コンテンツの余白
+%ex-side-space{
+  padding-left: 8px;
+  padding-right: 8px;
+}
+%ex-height-space {
+  padding-top:8*2px;
+  padding-bottom:8*2px;
+}
+
+%ex-transition-base {
+  transition: all 0.6s ease-in-out;
+}
+
+/* FONTS
+   ---------------------------------------------------------- */
+%ex-font-xxlrg{
+  @include cnt-font-size($font-xlrg*1.5);
+}
+%ex-font-xlrg{
+  @include cnt-font-size($font-xlrg);
+}
+%ex-font-lrg{
+  @include cnt-font-size($font-lrg);
+}
+%ex-font-nml{
+  @include cnt-font-size($font-nml);
+}
+%ex-font-sml{
+  @include cnt-font-size($font-sml);
+}
+%ex-font-xsml{
+  @include cnt-font-size($font-xsml);
+}
+%ex-font-xxsml{
+  @include cnt-font-size($font-xsml*.5);
+}
+%ex-web-font{font-family: 'Inika', serif;}
+
+/* PARTS
+   ---------------------------------------------------------- */
+%ex-textarea{
+  border-color: $color-border;
+  min-height: 110px;
+  margin-bottom: 0;
+}
+%ex-input-check-radio{
+  .input {
+    display: none;
+    &:checked {
+      //チェックされたときのデザイン
+      & + .check-icon, & + .radio-icon {
+        color: #FFF;
+        background: $color-link;
+        text-align: center;
+        &:before {
+          @extend %ex-font-aws;
+          @extend %ex-pos-center;
+          width: 9px;
+        }
+      }
+      & + .check-icon{
+        border: 3px solid $color-link;
+        content: url('/images/common/input-check.svg');
+        display: inline-block;
+      }
+      & + .radio-icon{
+        border: 6px solid $color-link;
+        content: url('/images/common/input-radio.svg');
+        display: inline-block;
+      }
+
+    }
+  }
+  > .check-icon, > .radio-icon {
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    width: auto;
+    margin-right: .5em;
+    height: 22px;
+    width: 22px;
+    border: 1px solid $color-border;
+    background: #FFF;
+  }
+  > .check-icon{
+    @include cnt-radius(4px);
+  }
+
+  > .radio-icon {
+    @include cnt-circle;
+  }
+}
+%ex-button-push{
+  box-shadow: 0 4px 0 darken($color-link,20%);
+  transition: .2s;
+}
+%ex-button-push-active{
+  box-shadow: 0 0 0 darken($color-link,20%);
+  transform: translateY(4px);
+  opacity:1;
+}
+%ex-button-status-now{
+  &.op-active{
+    @extend %ex-button-push-active;
+    opacity:.5;
+    border: 1px solid $color-text;
+    color: $color-text;
+    &:hover,&:active,&:focus{
+      opacity: 1;
+    }
+  }
+  &.op-disable{
+    &:hover,&:active,&:focus {
+      @extend .c-button-push-line.op-active;
+      opacity:.5;
+      cursor: default;
+    }
+  }
+}

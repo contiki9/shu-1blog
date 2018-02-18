@@ -1,0 +1,174 @@
+h2 テキストのマークアップ
+h3 デフォルト
+p
+    | これは段落です。特別なテキスト配置処理が付いていない状態になっている必要があります。通常のテキストフローと同じように表示されるべきです。な
+    | にも特別なことはありません。ただ、愛とともに自由に流れるテキストだけ。完全に中立的で、どちらかの肩を持つこともなく、かといってどっちつかずの態度
+    | というわけでもない。それだけ。それだけです。ここにいることが好きで、片方のサイドを選ぶ必要を感じていない。そんな彼はほっといてあげてください。彼
+    | は彼のままで。私を信じて。
+h3 左寄せ
+p(style='text-align:left;')
+    | これは段落です。左寄せになっています。彼の視点はやや左寄りです。好きな色は緑。左寄せな彼
+    | はエコフレンドリーになりがちですが、実際にそうだというはっきりした証拠というのはとくにありません。彼は富を共有するのが好きですが、公平な配分につ
+    | いては両端揃えの彼にお任せといったところです。
+h3 中央寄せ
+p(style='text-align:center;')
+    | これは段落です。中央寄せになっています。中央に寄っているというのはつまり、どっちつか
+    | ずということです。意見がコロコロ変わったりします。自分の意見を決めるのに時間がかかります。どちらかのサイドを選びたいと思っているんです。本当に。
+    | 意図はすばらしいんですが、実際には助けになるというより物事を必要以上に複雑にしてしまったりします。彼の気持ちを振り向かせられれば最高でしょう。中
+    | 央寄せの彼は賄賂も受け取るらしいですよ。
+h3 右寄せ
+p(style='text-align:right;')
+    | これは段落です。右寄せになっています。彼の視点は右寄りなんです。他の人に何をどんなふう
+    | にすべきか指図されるのをいやがります。右派の彼はたくさんの銃を保有していて、狩りに繰り出すのが好きです。いいじゃないですか。球場5つ分くらいの距
+    | 離からなかなかいい弾を撃つわけです。どんぴしゃに。すごいですよ。
+h3 両端揃え
+p(style='text-align:justify;')
+    | これは段落です。左右両端揃えになっています。英語ではジャスティファイドと呼ばれてい
+    | ますがジャスティン・ティンバーレイクとは関係ありません。普通、両端揃えの彼はかなり厳格です。すべてがあるべき場所にぴったりと収まっていないと気が
+    | 済まず、他の配置のようにばらばらだったりはしません。だから彼の方がいいなんて言ってるわけではないんですよ。でもまあ確かに、エリート気取りの態度だ
+    | なって感じることはありますけど。
+h2 画像のマークアップ
+p
+    | 画像の配置では、ユーザーが「指定なし」「右寄せ」「左寄せ」「中央揃え」の中から自分の好きなものを選べるようにする必要があります。さらに、「サムネイル」「中サイズ」「大サイズ」「フルサイズ」という選択肢の中から大きさを選べるようにするべきです。
+p(style='text-align: center;')
+    img.size-full.aligncenter(scale='0', title='画像配置 580x300', alt='画像配置 580x300', src='//placehold.jp/3d4070/ffffff/580x300.png?text=', height='300', width='580')
+p
+    | 上記の画像は
+    strong 中央寄せ
+    | になるはずです。
+p
+    strong
+        img.size-full.alignleft(scale='0', title='画像配置 150x150', alt='画像配置 150x150', src='//placehold.jp/3d4070/ffffff/150x150.png?text=', height='150', width='150')
+    | このパラグラフの残り画像を左寄せしたとき、文章が150ピクセルの画像の周りを囲むようになるかどうか見るためのものです。
+    strong
+p
+    | ご覧のとおり、画像の上・下・右にスペースが空いている事がわかると思います。テキストは画像にこっそりと忍びよってはいません、忍び寄ることは良
+    | くない事です。画像だって十分に呼吸ができるスペースが必要なのです。画像が文章にイライラさせられることなく役割を果たせるようにしてあげてください。
+    | 次の文章では、テキストが画像の右から下へとシームレスに途切れることなく続いている事がわかりますね。これで完了です !
+p
+    | 次は、
+    strong とても大きな画像
+    | のテストです。そして、この画像には
+    strong 配置の指定がありません
+    | 。
+p
+    img.alignnone(scale='0', title='画像配置 1200x400', alt='画像配置 1200x400', src='//placehold.jp/3d4070/ffffff/1200x400.png?text=', height='400', width='1200')
+p 上記の画像は1200ピクセルもありますが、コンテンツエリアからはみ出る事はなく収まっています。
+p
+    img.size-full.alignright(scale='0', title='画像配置 300x200', alt='画像配置 300x200', src='//placehold.jp/3d4070/ffffff/300x200.png?text=', height='200', width='300')
+p
+    | そして今後は右寄せに移りたいと思います。また今度も、画像の上、下、左に十分な余白があると思います。ほら、あっちにいる彼を見てください !
+    | 右側の方にいるあの画像 ! 左寄せ画像がなんて言うかなんてどうでもいいんです、美しい配置ですよ。他の人の意見なんて気にしないでいいんです。
+p
+    | そしてこのへんでテキストが右寄せの画像の下に回り込んで、ちょうど良い具合に収まっているのが分かると思います。ひきつづきちょうど良い具合にスペースが残されていて、すべてがきれいに表示されているべきです。そうです…。右画像に回り込むのって気持ちいいですね。
+p これからキャプションのテストに入ります !
+#attachment_906.wp-caption.aligncenter(style='width: 590px')
+    img.size-full(scale='0', title='画像配置 580x300', alt='画像配置 580x300', src='//placehold.jp/3d4070/ffffff/580x300.png?text=', height='300', width='580')
+    p.wp-caption-text
+        | 580×300 画像の
+        a(title='画像設定', href='http://en.support.wordpress.com/images/image-settings/') キャプション
+        | 例。
+p
+    | 上記の画像は
+    strong 中央寄せ
+    | になるはずです。キャプションにはリンクが含まれていますが、おかしな表示になっていないか確認しましょう。
+#attachment_904.wp-caption.alignleft(style='width: 160px')
+    img.size-full(scale='0', title='画像配置 150x150', alt='画像配置 150x150', src='//placehold.jp/3d4070/ffffff/150x150.png?text=', height='150', width='150')
+    p.wp-caption-text ちょっとしたキャプション
+p
+    | このパラグラフの残りの部分は、150×150 サイズの
+    strong 左寄せ
+    | 画像の回り込みをテストするためのつなぎです。
+p
+    | ご覧の通り、画像の上・下・右にスペースが必要です。テキストは画像にこっそりと忍びよってはいません、忍び寄ることは良くない事です。画像だって
+    | 十分に呼吸ができるスペースが必要なのです。画像が文章にイライラさせられることなく役割を果たせるようにしてあげてください。次の文章では、テキストが
+    | 画像の右から下へとシームレスに途切れることなく続いている事がわかりますね。これで完了です !
+p
+    | それでは、
+    strong とても大きな画像
+    | のテストです。そして、この画像にも
+    strong 配置の指定はありません
+    | 。
+#attachment_907.wp-caption.alignnone(style='width: 1210px')
+    img(scale='0', title='画像配置 1200x400', alt='画像配置 1200x400', src='//placehold.jp/3d4070/ffffff/1200x400.png?text=', height='400', width='1200')
+    p.wp-caption-text とても大きな画像のコメント
+p
+    | 上記の画像は1200ピクセル幅ですが、コンテンツエリアからはみ出すべきではありません。コンテンツのフローを視覚的に邪魔しないかたちで、指定のエリア内に収まっている必要があります。
+#attachment_905.wp-caption.alignright(style='width: 310px')
+    img.size-full(scale='0', title='画像配置 300x200', alt='画像配置 300x200', src='//placehold.jp/3d4070/ffffff/300x200.png?text=', height='200', width='300')
+    p.wp-caption-text 右側いるのほ良い気分です。
+p
+    | そして今後は
+    strong 右寄せ
+    | 画像に移りたいと思います。また今度も、画像の上、下、左に十分な余白があると思います。ほ
+    | ら、あっちにいる彼を見てください ! 右側の方にいるあの画像 !
+    | 左寄せ画像がなんて言うかなんてどうでもいいんです、美しい配置ですよ。他の人の意見なんて気にしないでいいんです
+p
+    | そしてこのへんでテキストが右寄せの画像の下に回り込んで、ちょうど良い具合に収まっているのが分かると思います。ひきつづきちょうど良い具合にスペースが残されていて、すべてがきれいに表示されているべきです。そうです…。右画像に回り込むのって気持ちいいですね。
+h2 ギャラリー
+style(type='text/css').
+    #gallery-1 {
+        margin: auto;
+    }
+
+    #gallery-1 .gallery-item {
+        float: left;
+        margin-top: 10px;
+        text-align: center;
+        width: 33%;
+    }
+
+    #gallery-1 img {
+        border: 2px solid #cfcfcf;
+    }
+
+    #gallery-1 .gallery-caption {
+        margin-left: 0;
+    }
+#gallery-1.gallery.gallery-columns-3.gallery-size-thumbnail
+    dl.gallery-item
+        dt.gallery-icon.landscape
+            a(href='')
+                img.attachment-thumbnail(scale='0', src='//placehold.jp/3d4070/ffffff/150x150.png?text=', alt='キャプションのテスト', aria-describedby='gallery-1-1131', height='150', width='150')
+        dd#gallery-1-1131.wp-caption-text.gallery-caption
+            | キャプションのテスト
+    dl.gallery-item
+        dt.gallery-icon.landscape
+            a(href='')
+                img.attachment-thumbnail(scale='0', src='//placehold.jp/3d4070/ffffff/150x150.png?text=', alt='雲がラッパ、ファンファーレ', aria-describedby='gallery-1-1130', height='150', width='150')
+        dd#gallery-1-1130.wp-caption-text.gallery-caption
+            | 雲がラッパ、ファンファーレ
+    dl.gallery-item
+        dt.gallery-icon.landscape
+            a(href='')
+                img.attachment-thumbnail(scale='0', src='//placehold.jp/3d4070/ffffff/150x150.png?text=', alt='カバとご対面', aria-describedby='gallery-1-1129', height='150', width='150')
+        dd#gallery-1-1129.wp-caption-text.gallery-caption
+            | カバとご対面
+    br(style='clear: both')
+    dl.gallery-item
+        dt.gallery-icon.landscape
+            a(href='')
+                img.attachment-thumbnail(scale='0', src='//placehold.jp/3d4070/ffffff/150x150.png?text=', alt='なんかいい雰囲気の姉弟', aria-describedby='gallery-1-1128', height='150', width='150')
+        dd#gallery-1-1128.wp-caption-text.gallery-caption
+            | なんかいい雰囲気の姉弟
+    dl.gallery-item
+        dt.gallery-icon.landscape
+            a(href='')
+                img.attachment-thumbnail(scale='0', src='//placehold.jp/3d4070/ffffff/150x150.png?text=', alt='初恋', aria-describedby='gallery-1-1127', height='150', width='150')
+        dd#gallery-1-1127.wp-caption-text.gallery-caption
+            | 初恋
+    dl.gallery-item
+        dt.gallery-icon.landscape
+            a(href='')
+                img.attachment-thumbnail(scale='0', src='//placehold.jp/3d4070/ffffff/150x150.png?text=', alt='キャプションがすごく長い時にどうなるのかをテストしています。キャプションがすごく長い時にどうなるのかをテストしています。大事なことなので二回言いました。', aria-describedby='gallery-1-1126', height='150', width='150')
+        dd#gallery-1-1126.wp-caption-text.gallery-caption
+            | キャプションがすごく長い時にどうなるのかをテストしています。キャプションがすごく長い時にどうなるのかをテストしています。大事なことなので二回言いました。
+    br(style='clear: both')
+h2 WordPress がサポートしている embed のスタイル
+iframe#twitter-widget-0.twitter-tweet.twitter-tweet-rendered(title='Twitter Tweet', style='border: medium none; max-width: 100%; min-width: 220px; margin: 10px 0px; padding: 0px; display: block; position: static; visibility: visible; width: 500px;', allowfullscreen='', allowtransparency='true', scrolling='no', frameborder='0', height='717')
+p
+    script(async='', src='markup_files/widgets.js', charset='utf-8')
+p
+    | この投稿は、WordPressの
+    a(title='Twitter Embeds', href='http://en.support.wordpress.com/twitter/twitter-embeds/', target='_blank') Twitterの埋め込み
+    |  機能のテストです。

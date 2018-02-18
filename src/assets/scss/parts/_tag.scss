@@ -1,0 +1,109 @@
+/*
+ * tag Style
+*/
+%ex-tag {
+  @include cnt-radius(2em);
+  @include cnt-font-size(12);
+  background: $color-link;
+  border:1px solid $color-link;
+  display: inline-block;
+  padding: .4em 1em;
+  line-height: 1;
+  letter-spacing: .1em;
+  color: #FFF;
+  font-weight: normal;
+  &.op-required {
+    border:1px solid $color-required;
+    background: $color-required;
+  }
+  &.op-disable,&.op-draft {//下書き用
+    border:1px solid $color-disable;
+    background: $color-disable;
+  }
+  &.op-main,&.op-running {//公開用
+    border:1px solid $color-main;
+    background: $color-main;
+  }
+  &.op-white {
+    border:1px solid #FFF;
+    background: #FFF;
+    color: $color-text;
+  }
+  &.op-alert {
+    border:1px solid $color-alert;
+    background: $color-alert;
+  }
+  &.op-lock,&.op-inactive {//不採用/非公開/
+    border:1px solid $color-text;
+    background: $color-text;
+  }
+  &.op-before {//公開準備中
+    background: none;
+    border:1px solid $color-main;
+    color: $color-main;
+  }
+  &.op-after{//公開終了
+    background: none;
+    border:1px solid $color-alert;
+    color: $color-alert;
+  }
+  &.op-approval{//審査中用
+    background: none;
+    border:1px solid $color-link;
+    color: $color-link;;
+  }
+  &.op-new {
+    color: $color-alert;
+    background: #FFF;
+    border:1px solid #FFF;
+  }
+  &.op-btn {
+    @include cnt-font-size(16);
+    @include cnt-hover;
+    padding: .5em 1em;
+    cursor: pointer;
+  }
+  &.op-square {
+    @include cnt-radius(0);
+    padding: .4em .5em;
+  }
+}
+
+.c-tag {
+  @extend %ex-tag;
+}
+select.c-tag{
+  padding-left: 1em;
+  padding-right: 1em;
+  border: none;
+}
+
+.c-tag-status {
+  @extend %ex-tag;
+  @include cnt-radius(4px);
+  padding: .7em 1em;
+}
+
+.c-tag-badge {
+  @include cnt-font-size(12);
+  @include cnt-radius(2em);
+  background: $color-alert;
+  color: #FFF3E0;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid #FFF;
+  min-height: 30px;
+  min-width: 30px;
+}
+
+.b-tag-loop {
+  @include flx-row;
+  margin-bottom:-15px;
+  .list {
+    margin-bottom: 15px;
+    margin-right: 10px;
+  }
+}

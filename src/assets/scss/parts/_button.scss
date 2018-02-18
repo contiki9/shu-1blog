@@ -1,0 +1,162 @@
+/*
+ * Button Style
+*/
+
+%ex-button-hover {
+  @include cnt-hover;
+}
+
+%ex-button {
+  @extend %ex-button-hover;
+  @include cnt-link(#FFF);
+  @include cnt-radius(2px);
+  text-align: center;
+  background: $color-link;
+  border: 1px solid $color-link;
+  padding: .6em 1.5em;
+  display: inline-block;
+  border: none;
+  font-weight: normal;
+  cursor: pointer;
+  &:hover, &:active, &:focus {
+    text-decoration: none;
+  }
+  &.op-long {
+    width: 100%;
+    @include mq(pc) {
+      max-width: 500px;
+    }
+  }
+  &.op-block {
+    display: block;
+  }
+  &.op-mini {
+    @include cnt-font-size(14);
+    padding: .6em 1em;
+  }
+  &.op-large {
+    padding: 1em 2em;
+    @include cnt-radius(.3em);
+  }
+  &.op-submit {
+    width: 100%;
+    padding: 1em 2em;
+    @include mq(pc) {
+      min-width: 500px;
+    }
+  }
+  &.op-main {
+    background: $color-main;
+  }
+  &.op-alert {
+    background: $color-alert;
+  }
+  &.op-lock {
+    background: $color-text;
+  }
+  &.op-fb {
+    background: $brand-facebook;
+  }
+  &.op-tw {
+    background: $brand-twitter;
+  }
+  &.op-gp {
+    background: $brand-google-plus;
+  }
+}
+
+.b-button-block {
+  &.op-center {
+    text-align: center;
+  }
+  .note {
+    @include cnt-font-size(14);
+    margin-top: .5em;
+  }
+}
+
+.c-button {
+  @extend %ex-button;
+}
+
+input[type=submit], input[type=reset], input[type=button] {
+  &.c-button {
+    @extend %ex-button;
+    @include cnt-font-size(16);
+  }
+}
+
+.c-button-line, .c-button-line:hover {
+  @extend %ex-button;
+  @include cnt-radius(4px);
+  @include cnt-link($color-link);
+  background: #FFF;
+  border: 1px solid $color-link;
+  &:hover, &:focus, &:visited, &:active {
+    border: 1px solid $color-link;
+  }
+}
+.c-button-push-line, .c-button-push {
+  @extend %ex-button-push;
+  &:hover, &:active, &:focus {
+    @extend %ex-button-push-active;
+  }
+}
+
+.c-button-push {
+  @extend .c-button;
+  border: 1px solid $color-link;
+  &.op-active {
+    @extend %ex-button-push-active;
+    background: $color-disable;
+    opacity: .5;
+    border: 1px solid $color-disable;
+    &:hover, &:active, &:focus {
+      opacity: 1;
+    }
+  }
+  &.op-disable {
+    &:hover, &:active, &:focus {
+      @extend .c-button-push.op-active;
+      opacity: .5;
+      cursor: default;
+    }
+  }
+}
+
+.c-button-push-line {
+  @extend .c-button-line;
+  @extend %ex-button-status-now;
+}
+
+.c-button-text {
+  @extend %ex-button-hover;
+  @include cnt-font-size(16);
+  border: none;
+  color: $color-link;
+  font-weight: normal;
+  text-decoration: underline;
+  display: inline-block;
+  padding: 0;
+}
+
+.c-button-full-radius {
+  @extend %ex-button;
+  @include cnt-radius(2em);
+  &.op-border{
+    background: #FFF;
+    color: $color-link;
+    border:1px solid $color-link;
+  }
+  .fa {
+    display: inline-block;
+    font-weight: bold;
+    &.op-right {
+      padding-left: 8*2px;
+    }
+    &.op-left {
+      padding-right: 8*2px;
+    }
+
+  }
+}

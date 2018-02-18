@@ -1,0 +1,55 @@
+block variables
+doctype
+html(lang=pageLang)
+    head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# " + pageOgpType + ": http://ogp.me/ns/" + pageOgpType + "#")
+        if pageTitle
+            title #{pageTitle} | #{site.name}
+        else
+            title #{site.name}
+
+        meta(name="description" content=pageDescription)
+        meta(name="keywords" content=pageKeywords)
+
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(name="format-detection" content="telephone=no")
+
+        //noindex
+        meta(name='robots', content='noindex,nofollow')
+
+        //- OGP
+        if pageOgpTitle
+            meta(property="og:title" content=pageOgpTitle + ' | ' + site.name)
+        else
+            meta(property="og:title" content=site.name)
+        meta(property="og:type" content=pageOgpType)
+        meta(property="og:image" content=pageOgpImage)
+        meta(property="og:url" content=site.rootUrl + pageUrl)
+        meta(property="og:description" content=pageDescription)
+        meta(property="og:site_name" content=site.name)
+        meta(property="og:locale" content=pageLang)
+
+        //- OGP Facebook insights
+        meta(property="fb:admins" content="")
+        meta(property="fb:app_id" content="")
+        //- /OGP Facebook insights
+        //- OGP Twitter Cards
+        meta(name="twitter:card" content="summary")
+        meta(name="twitter:site" content="@")
+        //- /OGP Twitter Cards
+        //- /OGP
+
+        block mata
+
+        link(rel='shortcut icon', href='/favicon.ico', type='img/x-icon')
+        link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+        link(rel='stylesheet', href='/css/style.css')
+        block link
+
+        script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+        script(src='//cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js')
+        script(src='/assets/js/common.js')
+        block script
+
+    block body

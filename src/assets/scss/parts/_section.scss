@@ -1,0 +1,75 @@
+/*
+ * section Style
+*/
+
+.c-section-title {
+  @include cnt-font-size(30);
+  text-align: center;
+}
+
+.c-section-title-border-bottom {
+  @include cnt-font-size(30);
+  text-align: center;
+  color: $color-main;
+  padding-bottom: 15px;
+  border-bottom: 2px solid $color-main;
+}
+
+.c-section-title-icon-left {
+  @include flx-row;
+  @include flx-middle;
+  .icon {
+    margin-right: .5em;
+    @include mq(){
+      img{
+        width:30px;
+      }
+    }
+  }
+  .title {
+    @include flx-col;
+    @include cnt-font-size(30);
+    color: $color-main;
+    @include mq(){
+      @include cnt-font-size(25);
+    }
+  }
+}
+
+.c-section-title-icon-top {
+  .icon {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .title {
+    @include cnt-font-size(30);
+    color: $color-main;
+    text-align: center;
+  }
+}
+
+.b-section-lp {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  .w-section-head-block {
+    margin-bottom: 8*4px;
+    @include mq(){
+      margin-bottom: 8*2px;
+    }
+    &.op-icon-top {
+      margin-bottom: 20px;
+    }
+  }
+  .w-section-content-block {
+    .section-text-block {
+      margin-bottom: 8px;
+      &.op-text-center {
+        text-align: center;
+      }
+    }
+  }
+  .w-bottom-button {
+    margin-top: 8*4px;
+    text-align: center;
+  }
+}

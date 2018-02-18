@@ -1,0 +1,54 @@
+/*
+ * search-form Style
+*/
+.c-search-form {
+  label {
+    display: block;
+    margin-bottom: 30px;
+    input, button {
+      margin-bottom: 0;
+    }
+    input {
+      width: 100%;
+    }
+    .name {
+      @include cnt-font-size(14);
+      margin-bottom: .5em;
+    }
+  }
+}
+
+.b-search-form-base {
+  @include cnt-radius(5px);
+  background: $color-bg-light;
+  border: 1px solid $color-border;
+  padding: 8*2px 8*2px;
+  .w-search-form-wrap {
+    max-width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .c-line {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  .w-search-form-submit {
+    text-align: center;
+    margin-top: 8*2px;
+    margin-bottom: 8*2px;
+    .c-button {
+      min-width: auto;
+      width: 100%;
+      @include mq(pc){
+        max-width: 250px;
+      }
+
+    }
+  }
+  .w-layout-section-input {
+    margin-bottom: 8*3px;
+    .l-checkbox {
+      margin-bottom: -1.2em;
+    }
+  }
+}

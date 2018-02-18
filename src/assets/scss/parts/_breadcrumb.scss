@@ -1,0 +1,99 @@
+/*
+ * breadcrumb Style
+*/
+
+.c-breadcrumb{
+  margin-bottom: 0;
+  padding-left: 0;
+  @include cnt-font-size(12);
+  li{
+    display:inline;
+    list-style: none;
+    margin-bottom: 0;
+    //font-weight: bold;
+    &:after{
+      font-family: FontAwesome;
+      content: '\f105';
+      padding: 0 8px;
+      color: silver;
+    }
+    &:last-child:after{
+      content: '';
+    }
+    a{
+      text-decoration: none;
+      color: $color-link;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.b-breadcrumb{
+  .w-breadcrumb{
+    @extend .c-container;
+    padding-top: 8*2px;
+    padding-bottom: 8*2px;
+  }
+}
+.b-breadcrumb-multi-steps{
+  @include flx-row;
+  @include flx-center;
+  @include cnt-font-size(14);
+  li{
+    padding-left: 8*2px;
+    &:first-child{
+      padding-left: 0;
+    }
+    &.op-visited, &.op-current{
+      .step{
+        background: $color-main;
+      }
+    }
+    &.op-visited{
+      .stage{
+        color: $color-text;
+      }
+    }
+    &.op-current{
+      .stage{
+        color: $color-main;
+      }
+    }
+    &:last-child{
+      .w-multi-steps-wrap{
+        &:after{
+          content: '';
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  .w-multi-steps-wrap{
+    @include flx-row;
+    @include flx-middle;
+    &:after{
+      @extend %ex-font-aws;
+      content: '\f101';
+      padding-left: 8*2px;
+      margin-right: 0;
+      @include cnt-font-size(20);
+      color: $color-text-light;
+    }
+  }
+  .step{
+    @include cnt-circle;
+    background: $color-text-light;
+    color: #FFF;
+    padding:3px;
+    height:24px;
+    width:24px;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  .stage{
+    display: block;
+    color: $color-text-light;
+  }
+}

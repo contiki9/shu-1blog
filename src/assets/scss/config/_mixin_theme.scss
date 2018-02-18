@@ -1,0 +1,11 @@
+/*
+SASS Minxin
+*/
+
+//ブレイクポイント管理
+@mixin mq($breakpoint:brk) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+

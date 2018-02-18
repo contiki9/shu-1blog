@@ -1,0 +1,325 @@
+h1 見出し壱：夏目漱石著『吾輩は猫である』
+h2 見出し弐：レオ・レオニ作『スイミー 小さなかしこいさかなのはなし』
+h3 見出し参：あまん きみこ作、上野 紀子絵『ちいちゃんのかげおくり』
+h4 見出し四：モンゴルの民話『スーホの白い馬』
+h5 見出し五：新美南吉作『手袋を買いに』
+h6 見出し六：芥川龍之介著『羅生門』
+h2 引用 (Blockquote) テスト
+p 一行の引用。
+blockquote
+    p ハングリーであれ、愚かであれ。
+p
+    code cite
+    |  参照を含む複数行の引用。
+blockquote
+    p
+        | これは言語みたいなものだ。アルファベットすなわち音階を学び、文すなわちコードを学ぶ。そしてやがてホーンと即興で会話
+        | するようになる。即興で話すのはすばらしいことだと思うが、私には決して会得できないだろう。しかし音楽ともなれば、私は即座によろこんで会話する。そ
+        | う、それがジャズ音楽のすべてだ。
+    p
+        cite スタン・ゲッツ
+h2 テーブル
+
+table
+    thead
+        tr
+            th 社員
+            th 給料
+            th
+    tbody
+        tr
+            th
+                a(href='http://example.org/') 山田太郎
+            td 1ドル
+            td スティーブ・ジョブズが必要なサラリーと同じ額。
+        tr
+            th
+                a(href='http://example.org/') 田中花子
+            td 1,000万円
+            td ブログを書くために必要になる資金。
+        tr
+            th
+                a(href='http://example.org/') 山本次郎
+            td 1億円
+            td 百聞は一見にしかず、ということで、カメラマンはブロガーの100倍。
+        tr
+            th
+                a(href='http://example.org/') 中山愛子
+            td 10億円
+            td 特に理由は要りません。
+dl
+    dt 定義リストタイトル（dt）
+    dd これは定義リストです。(dd)
+    dt 定義の定義
+    dd
+        | 物事、領域、何かについての意味の正確な文章や説明:
+        em 詩を構成するものの定義。
+    dt ギャラリーとはなにか
+    dd
+        | WordPress 2.5 から導入された、投稿に添付された画像を展示するための機能です。同じように、投稿を編集中にアップロードすると、そのファイルは「投稿に添付」されます。
+    dt Gravatar (グラバター)
+    dd
+        | グラバターとはグローバルに認識されるアバター (あるユーザーを表すグラフィックイメージや写真)
+        | です。グラバターはメールアドレスと紐づいていて、Gravatar.com
+        | サービスによって管理されています。このサービスを利用すると、ブログ所有者は自分のブログを設定することによりコメント欄にユーザーのグラバターを表示
+        | させることができます。
+h2 非順序リスト (ネスト化)
+ul
+    li
+        | リスト項目 1
+        ul
+            li
+                | リスト項目 1
+                ul
+                    li リスト項目 1
+                    li リスト項目 2
+                    li リスト項目 3
+                    li リスト項目 4
+            li リスト項目 2
+            li リスト項目 3
+            li リスト項目 4
+    li リスト項目 2
+    li リスト項目 3
+    li リスト項目 4
+h2 順序リスト (ネスト化)
+ol
+    li
+        | リスト項目 1
+        ol
+            li
+                | リスト項目 1
+                ol
+                    li リスト項目 1
+                    li リスト項目 2
+                    li リスト項目 3
+                    li リスト項目 4
+            li リスト項目 2
+            li リスト項目 3
+            li リスト項目 4
+    li リスト項目 2
+    li リスト項目 3
+    li リスト項目 4
+p ネスト化された混合リストでは以下が正しく表示されるようにしてください。
+ul
+    li リストの中のリストは番号付きリストの順番を壊さないこと
+    li
+        span(style='line-height: 1.714285714; font-size: 1rem;') 箇条書きのスタイルの深さは十分であること
+h3 番号付きリスト – 番号なしリスト – 番号付きリスト
+ol
+    li 番号付きリストアイテム
+    li
+        | 番号付きリストアイテム
+        ul
+            li
+                strong 番号なし
+            li
+                strong 番号なし
+                ol
+                    li 番号付きリストアイテム
+                    li 番号付きリストアイテム
+    li 番号付きリストアイテム
+    li 番号付きリストアイテム
+h3 番号付きリスト – 番号なしリスト – 番号なしリスト
+ol
+    li 番号付きリストアイテム
+    li
+        | 番号付きリストアイテム
+        ul
+            li
+                strong 番号なし
+            li
+                strong 番号なし
+                ul
+                    li 番号なしリストアイテム
+                    li 番号なしリストアイテム
+    li 番号付きリストアイテム
+    li 番号付きリストアイテム
+h3 番号なしリスト – 番号付きリスト – 番号なしリスト
+ul
+    li 番号なしリストアイテム
+    li
+        | 番号なしリストアイテム
+        ol
+            li 番号付き
+            li
+                | 番号付き
+                ul
+                    li 番号なしリストアイテム
+                    li 番号なしリストアイテム
+    li 番号なしリストアイテム
+    li 番号なしリストアイテム
+h3 番号なしリスト – 番号なしリスト – 番号付きリスト
+ul
+    li 番号なしリストアイテム
+    li
+        | 番号なしリストアイテム
+        ul
+            li 番号なし
+            li
+                | 番号なし
+                ol
+                    li
+                        strong 番号付きリストアイテム
+                    li
+                        strong 番号付きリストアイテム
+    li 番号なしリストアイテム
+    li 番号なしリストアイテム
+h2 HTML 要素タグテスト
+p
+    strong 住所タグ
+p
+    | 以下は住所の例です。
+    code &lt;address&gt;
+    |  タグを使用しています:
+address
+    | 〒100-0000
+    br
+    | 東京都千代田区1-1-1
+    br
+    | 日本
+p
+    strong anchor タグ (リンク)
+p
+    | これは
+    a(href='http://example.com/', rel='nofollow')
+        code &lt;anchor&gt;
+    |  (もしくはリンクとも呼ばれます) の例です。
+p
+    strong abbr タグ
+p
+    | この
+    abbr(title='abbreviation') abbr
+    |  は文章の中にある &lt;abbr&gt; タグの例です。
+p
+    strong
+        | Acronym タグ (
+        em HTML5 では非推奨
+        | )
+p
+    | これは
+    code &lt;acronym&gt;
+    |  タグを使用した
+    acronym(title='three-letter acronym') TLA
+    |  です。
+p
+    strong
+        | Big タグ(
+        em HTML5 では非推奨
+        | )
+p
+    | このテストは
+    big 大きな
+    | 文字を表す
+    code &lt;big&gt;
+    |  タグの例ですが、このタグは HTML5 ではサポートされていません。
+p
+    strong Cite タグ
+p
+    | “Code is poetry.” —
+    cite WordPress
+p
+    strong Code タグ
+p
+    code &lt;code&gt;
+    |  タグはこのように使います:
+    code word-wrap: break-word;
+p
+    strong Delete タグ
+p
+    code &lt;del&gt;
+    |  タグは
+    del 打ち消し線
+    | などで表現されますが、このタグは HTML5 ではサポートされていません (代わりに
+    code &lt;strike&gt;
+    |  を使ってください)。
+p
+    strong Emphasize タグ
+p
+    code &lt;em&gt;
+    |  タグは
+    em 文章の強調
+    | に使われます。欧文では斜体になっていることがよくあります。
+p
+    strong Insert タグ
+p
+    code &lt;ins&gt;
+    |  タグは
+    ins 挿入されたコンテンツ
+    | を意味します。
+p
+    strong Keyboard タグ
+p
+    | このあまり知られていない
+    code &lt;kbd&gt;
+    |  タグは
+    kbd Ctrl
+    |  のようにキーボードテキストをエミュレートします。通常、
+    code &lt;code&gt;
+    |  タグと同じようにスタイリングされます。
+p
+    strong Preformatted タグ
+p
+    code &lt;pre&gt;
+    |  タグは複数行のコードのスタイリングに使います。
+pre.
+    \n.post-title {
+    \tmargin: 0 0 5px;
+    \tfont-weight: bold;
+    \tfont-size: 38px;
+    \tline-height: 1.2;
+    \tand here's a line of some really, really, really, really long text, just to see how the PRE tag handles it and to find out how it overflows;
+    }
+p
+    strong Quote タグ
+p
+    q デベロッパーズ、デベロッパーズ, デベロッパーズ…
+    |  –スティーブ・バルマー
+p
+    strong
+        | Strike タグ (
+        em HTML5 では非推奨
+        | )
+p
+    | このタグは
+    span(style='text-decoration: line-through;') 打ち消し線
+    | を表しています。
+p
+    strong Strong タグ
+p
+    | このタグは
+    strong 太字
+    | テキストを表しています。
+p
+    strong Subscript タグ
+p
+    | Subscript タグ
+    code &lt;sub&gt;
+    |  を使うと H
+    sub 2
+    | O のような表示の際に「2」が下付きになります。
+p
+    strong Superscript タグ
+p
+    | Superscript タグ
+    code &lt;sup&gt;
+    |  を使うと E = MC
+    sup 2
+    |  のような表示の際に「2」が上付きになります。
+p
+    strong
+        | Teletype タグ (
+        em HTML5 では非推奨
+        | )
+p
+    code &lt;tt&gt;
+    |  はあまり使われないタグですが、
+    tt テレタイプテキスト
+    |  として通常
+    code &lt;code&gt;
+    |  タグのようにスタイル
+p
+    strong Variable タグ
+p
+    | 変数や引数を表す
+    var variables
+    |  タグです。

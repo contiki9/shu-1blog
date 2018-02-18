@@ -1,0 +1,27 @@
+/*
+* Noto Sans Japanese (japanese) http://www.google.com/fonts/earlyaccess
+ */
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/NotoSansCJKjp-Regular.woff2) format('woff2'),
+  url(../fonts/NotoSansCJKjp-Regular.woff) format('woff'),
+  url(../fonts/NotoSansCJKjp-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/NotoSansCJKjp-Bold.woff2) format('woff2'),
+  url(../fonts/NotoSansCJKjp-Bold.woff) format('woff'),
+  url(../fonts/NotoSansCJKjp-Bold.ttf) format('truetype');
+}
+
+
+//roboto
+///////////////////////////////////////
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,700';
+

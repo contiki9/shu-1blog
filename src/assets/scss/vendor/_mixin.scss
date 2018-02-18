@@ -1,0 +1,561 @@
+/*
+SASS mixin
+*/
+
+//font-size
+///////////////////////////////////////////////
+@mixin cnt-font-size($size, $base: 16) {
+  font-size: $size + px;
+  font-size: ($size / $base) + rem;
+}
+
+//text-shadow
+///////////////////////////////////////////////
+@mixin cnt-text-shadow-black($opacity: .4) {
+  text-shadow: 0 1px 0 rgba(#000, $opacity);
+}
+
+@mixin cnt-text-shadow-white($opacity: 1) {
+  text-shadow: 0 1px 0 rgba(#FFF, $opacity);
+}
+
+//box-shadow-under
+///////////////////////////////////////////////
+@mixin cnt-box-shadow-under($x: 0, $y: 0, $blur: 25px, $color: rgba(0,0,0,.20)) {
+  box-shadow: $x $y $blur $blur*-1 $color;
+}
+
+@mixin cnt-box-shadow-in-height($x: 0, $y: 10px, $blur: 10px, $color: rgba(0,0,0,.40)) {
+  box-shadow: $x $y $blur $blur*-1 $color inset, $x $y*-1 $blur $blur*-1 $color inset;
+}
+
+@mixin cnt-gradient-top-lighten($color:#000, $lighten:10) {
+  background-color: $color;
+  @include background-image(linear-gradient(lighten($color, $lighten) 0%, $color 100%));
+}
+
+@mixin cnt-gradient-top-darken($color:#FFF, $darken:10) {
+  background-color: $color;
+  @include background-image(linear-gradient(darken($color, $darken) 0%, $color 100%));
+}
+
+@mixin cnt-gradient($start-color, $end-color, $orientation) {
+  background: $start-color;
+  @if $orientation == vertical {
+    // vertical
+    background: -moz-linear-gradient(top, $start-color 0%, $end-color 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $start-color), color-stop(100%, $end-color));
+    background: -webkit-linear-gradient(top, $start-color 0%, $end-color 100%);
+    background: -o-linear-gradient(top, $start-color 0%, $end-color 100%);
+    background: -ms-linear-gradient(top, $start-color 0%, $end-color 100%);
+    background: linear-gradient(to bottom, $start-color 0%, $end-color 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$start-color', endColorstr='$end-color', GradientType=0);
+  } @else if $orientation == horizontal {
+    // horizontal
+    background: -moz-linear-gradient(left, $start-color 0%, $end-color 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, $start-color), color-stop(100%, $end-color));
+    background: -webkit-linear-gradient(left, $start-color 0%, $end-color 100%);
+    background: -o-linear-gradient(left, $start-color 0%, $end-color 100%);
+    background: -ms-linear-gradient(left, $start-color 0%, $end-color 100%);
+    background: linear-gradient(to right, $start-color 0%, $end-color 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$start-color', endColorstr='$end-color', GradientType=1);
+  } @else {
+    // radial
+    background: -moz-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $start-color), color-stop(100%, $end-color));
+    background: -webkit-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%);
+    background: -o-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%);
+    background: -ms-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%);
+    background: radial-gradient(ellipse at center, $start-color 0%, $end-color 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$start-color', endColorstr='$end-color', GradientType=1);
+  }
+}
+
+//background
+///////////////////////////////////////////////
+@mixin cnt-bg-fluid($src:'',$size:contain) {
+  background-image: url($src);
+  background-size: $size;
+  background-position: center, center;
+  background-repeat: no-repeat;
+}
+
+//opacity
+///////////////////////////////////////////////
+@mixin cnt-opacity($opacity) {
+  opacity: $opacity;
+  filter: alpha(opacity=($opacity * 100));
+}
+
+//circle
+///////////////////////////////////////////////
+@mixin cnt-circle {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  border-radius: 100%;
+}
+
+//border-radius
+///////////////////////////////////////////////
+@mixin cnt-radius($size) {
+  -webkit-border-radius: $size;
+  -moz-border-radius: $size;
+  -ms-border-radius: $size;
+  border-radius: $size;
+}
+
+//box-shadow
+///////////////////////////////////////////////
+@mixin cnt-box-shadow( $h: 10px , $v: 10px , $b: 0px , $s: 0px , $c: #000000 ) {
+  -webkit-box-shadow: $h $v $b $s $c;
+  -moz-box-shadow: $h $v $b $s $c;
+  box-shadow: $h $v $b $s $c;
+}
+
+//box-shadow
+///////////////////////////////////////////////
+@mixin cnt-vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+//link
+///////////////////////////////////////////////
+@mixin cnt-link-darken($color,$darken:20%) {
+  color: $color;
+  &:hover, &:active, &:focus {
+    color: lighten($color, $darken);
+  }
+}
+
+@mixin cnt-link-lighten($color,$lighten:20%) {
+  color: $color;
+  &:hover, &:active, &:focus {
+    color: lighten($color, $lighten);
+  }
+}
+
+//hover
+///////////////////////////////////////////////
+@mixin cnt-hover($opacity:0.4,$speed:0.5s) {
+  &:hover {
+    -moz-opacity: $opacity;
+    opacity: $opacity;
+    transition: $speed;
+  }
+}
+
+//link
+///////////////////////////////////////////////
+@mixin cnt-link($color:#FFF) {
+  color: $color;
+  &:hover {
+    color: $color;
+  }
+  &:focus {
+    color: $color;
+  }
+  &:visited {
+    color: $color;
+  }
+}
+
+//position-center-middle
+///////////////////////////////////////////////
+@mixin cnt-pos-absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+//container
+///////////////////////////////////////////////
+@mixin cnt-max-container-center($inner:1200) {
+  max-width: $inner;
+  @include margin(null auto);
+}
+
+//translate
+///////////////////////////////////////////////
+@mixin cnt-rotation($r:-4.5deg) {
+  -webkit-transform: skewY($r) translate3d(0px, 0px, 0px);
+  transform: skewY($r) translate3d(0px, 0px, 0px);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+//animation
+///////////////////////////////////////////////
+@mixin cnt-anm-blinking($speed:1.5s,$keyframes:cnt-blink) {
+  //点滅
+  -webkit-animation: $keyframes $speed ease-in-out infinite alternate;
+  -moz-animation: $keyframes $speed ease-in-out infinite alternate;
+  animation: $keyframes $speed ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes cnt-blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes cnt-blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes cnt-blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+//縦揺れanimation
+@mixin cnt-anm-horizontal($speed:1s,$keyframes:cnt-horizontal) {
+  animation: $keyframes $speed ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes cnt-horizontal {
+  0% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@-moz-keyframes cnt-horizontal {
+  0% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes cnt-horizontal {
+  0% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+//横揺れanimation
+@mixin cnt-anm-vertical($speed:1s,$keyframes:cnt-vertical) {
+  animation: cnt-vertical $speed ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes cnt-vertical {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@-moz-keyframes cnt-vertical {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes cnt-vertical {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+//iflame
+///////////////////////////////////////////////
+@mixin cnt-iframe-rwd-4-3 {
+  position: relative;
+  width: 100%;
+  padding: 75% 0 0 0;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin cnt-iframe-rwd-16-9 {
+  position: relative;
+  width: 100%;
+  padding: 56.25% 0 0 0;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+//button
+///////////////////////////////////////////////
+//https://github.com/loup-brun/buttons/tree/master/scss
+
+// Functions
+@function check-background($color) {
+  @if (lightness($color) > 66) {
+    @return $gray-darker; // Lighter background, return dark color
+  } @else {
+    @return $gray-lighter; // Darker background, return light color
+  }
+}
+
+//--
+
+//buttons-mixin
+@mixin v-padding($padding-top, $padding-bottom: $padding-top) {
+  padding-top: $padding-top;
+  padding-bottom: $padding-bottom;
+}
+
+@mixin h-padding($padding-left, $padding-right: $padding-left) {
+  padding-left: $padding-left;
+  padding-right: $padding-right;
+}
+
+@mixin btn-common($v-spacing, $h-spacing: $v-spacing, $border-radius: 0, $border-width: 0) {
+  display: inline-block;
+  margin: 6px;
+  font-size: inherit;
+  line-height: 1.6;
+  padding: $v-spacing $h-spacing;
+  font-weight: normal;
+  border-width: $border-width;
+  border-style: solid;
+  background: transparent;
+  border-radius: $border-radius;
+  cursor: pointer;
+  //font-family: $font-family;
+  user-select: none;
+  vertical-align: bottom;
+
+  &.btn-disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+}
+
+//--
+
+@mixin cnt-btn-alpha($color, $text-color: check-background($color)) {
+  box-shadow: 0 3px 0 0 darken($color, 15%), // primary 3d effect
+  0 4px 4px -1px rgba(0, 0, 0, 0.6), // mellow drop shadow
+  0 4px 6px 1px rgba(0, 0, 0, 0.3), // drop shadow spread
+  0 1px 2px 1px rgba(0, 0, 0, 0) inset, // dark inner shadow
+  0 18px 32px -2px rgba(255, 255, 255, 0.1) inset; // bright inner shadow
+  background-color: $color;
+  background-image: linear-gradient(-45deg, $color, saturate(adjust-hue($color, -15%), 10%));
+  color: $text-color;
+
+  &:hover {
+    box-shadow: 0 3px 0 0 darken($color, 15%), // primary 3d effect
+    0 6px 4px -1px rgba(0, 0, 0, 0.3), // mellow drop shadow
+    0 4px 16px rgba(0, 0, 0, 0.5), // drop shadow spread
+    0 1px 2px 1px rgba(0, 0, 0, 0) inset, // dark inner shadow
+    0 18px 32px -2px rgba(255, 255, 255, 0.14) inset; // bright inner shadow
+  }
+
+  &:active {
+    box-shadow: 0 0px 0 0 darken($color, 20%), // primary 3d effect
+    0 3px 0 0 rgba(0, 0, 0, 0), // mellow drop shadow
+    0 4px 16px rgba(0, 0, 0, 0.0), // drop shadow spread
+    0 1px 2px 1px rgba(0, 0, 0, 0.5) inset, // dark inner shadow
+    0 -18px 32px -2px rgba(255, 255, 255, 0.1) inset; // bright inner shadow
+  ;
+    transition: 0s;
+
+    color: darken($color, 15%);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+
+  // alpha
+  $alpha-v-spacing:                 0.8em;
+  $alpha-h-spacing:                 1.6em;
+  $alpha-border-radius:             $alpha-v-spacing / 3;
+
+  @include btn-common($alpha-v-spacing, $alpha-h-spacing, $alpha-border-radius);
+  transition: box-shadow 0.2s, transform 0.2s, color 0.2s;
+
+  &:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  &:active {
+    transform: translateY(3px);
+  }
+}
+
+@mixin cnt-btn-delta($color, $text-color: check-background($color)) {
+  background-color: $color;
+  background-image: linear-gradient(-45deg, $color, saturate(adjust-hue($color, -15%), 10%));
+  color: $text-color;
+  border-top-color: lighten($color, 20%);
+  border-left-color: lighten($color, 6%);
+  border-right-color: lighten($color, 6%);
+  border-bottom-color: darken($color, 20%);
+
+  &:hover {
+    background-image: linear-gradient(-45deg, lighten($color, 2%), lighten(saturate(adjust-hue($color, -15%), 10%), 2%));
+  }
+
+  &:active {
+    color: darken($color, 20%);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    background-color: darken($color, 2%);
+    background-image: linear-gradient(-45deg, darken($color, 2%), darken(saturate(adjust-hue($color, -15%), 10%), 2%));
+
+    border-top-color: darken($color, 20%);
+    border-left-color: darken($color, 6%);
+    border-right-color: darken($color, 6%);
+    border-bottom-color: darken($color, 6%);
+  }
+
+  // delta
+  $delta-v-spacing:                 0.6em;
+  $delta-h-spacing:                 1.6em;
+  $delta-border-radius:             0.25em;
+  $delta-border-width:              1px;
+  $line-height:1.6;
+
+  @include btn-common($delta-v-spacing, $delta-h-spacing, $delta-border-radius, $delta-border-width);
+  background-color: transparent;
+  border-width: $delta-border-width;
+  border-style: solid;
+  box-shadow:
+          0 ((1em * $line-height ) /2 + $delta-v-spacing)  0 0 rgba(255,255,255,0.1) inset;
+  transition: box-shadow 0.3s $ease-out-cubic, border-color 0.3s $ease-out-cubic;
+
+  &:active {
+    box-shadow:
+            0 ((1em * $line-height ) /2 + $delta-v-spacing) 0.2em 0 rgba(0,0,0,0.08) inset;
+    transition: box-shadow 0.1s;
+  }
+}
+
+
+@mixin cnt-btn-iota($color, $text-color: $color) {
+  color: $text-color;
+  border-color: $color;
+  &:hover {
+    color: check-background($color);
+    background-color: $color;
+  }
+
+  &:active {
+    background-color: darken($color, 3%);
+
+    &:after {
+      background-color: darken($color, 3%);
+    }
+  }
+
+  &:after {
+    background-color: $color;
+  }
+
+  // iota
+  $iota-v-spacing:                 0.6em;
+  $iota-h-spacing:                 1.6em;
+  $iota-border-radius:             (1em * 2) / 2 + $iota-v-spacing + 0.15em;
+  $iota-border-width:              2px;
+
+  @include btn-common($iota-v-spacing, $iota-h-spacing, $iota-border-radius, $iota-border-width);
+  position: relative;
+  border-style: solid;
+  overflow: hidden;
+  transition: background-color 0.3s, color 0.3s;
+
+
+  &:hover {
+    &:after {
+      transform: scaleX(1);
+      opacity: 1;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    border-radius: $iota-border-radius;
+    transform: scaleX(0.7);
+    opacity: 0;
+    transition: transform 0.8s, opacity 0.3s;
+  }
+}
+
+
+
+// Mixin
+@mixin cnt-btn-nu($color, $text-color: check-background($color)) {
+  // nu
+  $nu-v-spacing:                    0.8em;
+  $nu-h-spacing:                    2.5em;
+  $nu-border-radius:                0;
+  $nu-border-width:                 3px;
+
+  color: $color;
+  border-color: $color;
+  &:hover {
+    background-color: $color;
+    color: $text-color;
+    @include h-padding($nu-h-spacing * 1.4);
+    border-radius: $nu-v-spacing / 2;
+  }
+
+  &:active {
+    background-color: darken($color, 3%);
+    border-color: darken($color, 3%);
+  }
+
+
+  @include btn-common($nu-v-spacing, $nu-h-spacing, $nu-border-radius, $nu-border-width);
+  transition: background-color 0.2s, color 0.2s, padding 0.2s $ease-out-back, border-radius 0.2s;
+}
+
+

@@ -1,0 +1,46 @@
+/*
+ * login Style
+*/
+
+.b-login-box{
+  @include cnt-radius(15px);
+  border: 2px solid $color-main;
+  background: #FFF;
+  padding-top: 20px;
+  min-width: 450px;
+  margin-bottom: 120px;
+  .w-head {
+    margin-bottom: 25px;
+    .logo-block {
+      margin-bottom: 25px;
+    }
+  }
+  .w-content-block {
+    margin-bottom: 30px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  .w-foot{
+
+  }
+  .logo-block {
+
+  }
+  .name-block {
+    @include cnt-font-size(14);
+  }
+}
+
+.b-login-box-footer{
+  .link-block{
+    border-top: 1px solid $color-border;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    a{
+      @include cnt-font-size(12);
+      color: $color-main;
+      text-decoration: underline;
+    }
+  }
+}
+

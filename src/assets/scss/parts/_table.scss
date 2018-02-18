@@ -1,0 +1,162 @@
+/*
+ * Table Style
+*/
+%ex-section-title{
+  padding: 20px 35px;
+  background: $color-main;
+  .title {
+    @include cnt-font-size(30);
+    font-weight: normal;
+    color: #FFF;
+    letter-spacing: .1em;
+  }
+}
+%ex-table{
+  margin-bottom: 0;
+  border:1px solid $color-border;
+  tr{
+    border: none;
+    border-bottom:1px solid $color-border-light;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    @include mq(){
+      border: none;
+    }
+  }
+  th,td{
+    line-height:1.8;
+    padding: 8px 8px;
+    @include mq(){
+      width:100%;
+      display: block;
+    }
+  }
+  th{
+    @extend %ex-ellipsis;
+    @include cnt-font-size(14);
+    text-align: left;
+    font-weight: normal;
+    vertical-align: top;
+    font-weight: normal;
+    background: $color-table;
+    color: $color-text-light-dark;
+  }
+  td{
+    @include cnt-font-size(14);
+    vertical-align: top;
+    width:100%;
+  }
+  select,input,textarea,button{
+    margin-bottom: 0;
+  }
+  textarea{
+    min-height: 240px;
+    width:100%;
+  }
+}
+
+%ex-table-none-border{
+  border: none;
+  margin-bottom: 0;
+  tr{
+    border: none;
+    border-bottom:8*2px solid #FFF;
+    &:last-child{
+      margin-bottom: 0;
+      border-bottom: none;
+      th{
+        margin-bottom: 0;
+      }
+    }
+  }
+  th,td{
+    display:table-cell;
+    margin-bottom: 0;
+  }
+  th{
+    @extend %ex-ellipsis;
+    @include cnt-font-size(14);
+    text-align: center;
+    font-weight: normal;
+    padding:.3em 10px;
+    vertical-align: top;
+    //display: block;
+    font-weight: normal;
+  }
+  td{
+    @extend %ex-break-word;
+    @include cnt-font-size(14);
+    padding:.3em 10px;
+    vertical-align: top;
+    width:100%;
+  }
+}
+
+.c-table{
+  @extend %ex-table;
+}
+
+.b-table-offer-list {
+  dl.table-list {
+    @include flx-row;
+    @include cnt-font-size(14);
+    margin-bottom: 0;
+    .title {
+      margin-right: 5px;
+      text-align: center;
+      min-width:120px;
+      padding:.4em;
+      background: $color-accent;
+      color: #FFF;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+    .text {
+      @include flx-col;
+      padding:.5em;
+      @extend %ex-break-word;
+    }
+  }
+}
+
+table.b-table-none-border{
+  @extend %ex-table-none-border;
+  &.op-th-accent{
+    th{
+      background: $color-accent;
+      color: #FFF;
+    }
+  }
+}
+table.b-table-offer-list-user{
+  @extend %ex-table;
+  border: none;
+  margin-bottom: 0;
+  thead{
+    background: $color-text;
+    color: #FFF;
+  }
+  tr,th,td{
+    vertical-align: middle;
+  }
+  .w-status-block{
+    width:100px;
+  }
+}
+
+.b-table-detail{
+  .w-table-detail-title{
+    .title{
+      @include cnt-font-size(24);
+      padding-left: 8px;
+      margin-bottom: 8px;
+    }
+  }
+  .w-table-detail-table{
+    margin-bottom: 8*4px;
+  }
+  .w-table-detail-button{
+    text-align: center;
+  }
+}

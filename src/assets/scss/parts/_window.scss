@@ -1,0 +1,48 @@
+/*
+ * window Style
+*/
+
+
+.b-window-modal{
+  @include cnt-radius(4px);
+  background: #FFF;
+  padding:8*4px 8*2px;
+  > .w-pop-up-page-title{
+    @extend %ex-section-title;
+    margin-bottom: 40px;
+    .title{
+      text-align: center;
+    }
+  }
+  .w-modal-sec{
+    .w-modal-sec-sub-title{
+      margin-bottom:8*4px;
+      .title{
+        @include cnt-font-size(20);
+        text-align: center;
+        &.op-alert{
+          color: $color-alert;
+        }
+      }
+    }
+    .w-modal-sec-content{
+      .w-text-block{
+        margin-bottom: 8*2px;
+      }
+      .l-column{
+        .l-column-2{
+          margin-bottom:8*4px;
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  .w-modal-close{
+    border-top: 1px solid $color-border;
+    margin-top: 8*4px;
+    padding-top: 8*4px;
+  }
+}
+

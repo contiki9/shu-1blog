@@ -1,0 +1,11 @@
+/*
+ * grlobal Page Style
+*/
+.w-global-*{
+  margin-top:8*10px;
+  margin-bottom: 8*5px;
+  @include mq(){
+    margin-top:8*5px;
+    margin-bottom: 8px;
+  }
+}

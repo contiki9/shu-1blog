@@ -1,0 +1,44 @@
+/*
+ * List Style
+*/
+ul.c-list-flex-btn {
+  @include flx-row;
+  margin-bottom: 0;
+  li {
+    margin-right: 15px;
+    margin-bottom: 0;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+ul.b-list-sns {
+  margin-bottom: 0;
+  li.list-sns {
+    @include flx-row;
+    @include flx-middle;
+    margin-bottom: 15px;
+    .c-button {
+      line-height: 1;
+      width: 100%;
+      color: #FFF;
+      min-height: 47px;
+      text-decoration: none;
+      @include flx-row;
+      @include flx-middle;
+      i {
+        position: relative;
+        left: -10px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        line-height: 1;
+        margin-right: 5px;
+      }
+      span.button-text {
+        position: relative;
+        //    top:3px;
+      }
+    }
+  }
+}

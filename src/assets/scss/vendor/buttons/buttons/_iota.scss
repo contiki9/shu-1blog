@@ -1,0 +1,66 @@
+// Buttons - IOTA
+// --------------------------------------------------------------------
+
+// Mixin
+@mixin btn-iota($color, $text-color: $color) {
+  color: $text-color;
+  border-color: $color;
+  &:hover {
+    color: check-background($color);
+    background-color: $color;
+  }
+
+  &:active {
+    background-color: darken($color, 3%);
+    
+    &:after {
+      background-color: darken($color, 3%);
+    }
+  }
+
+  &:after {
+    background-color: $color;
+  }
+}
+
+.btn {
+  @include btn-common($iota-v-spacing, $iota-h-spacing, $iota-border-radius, $iota-border-width);
+  position: relative;
+  border-style: solid;
+  overflow: hidden;
+  transition: background-color 0.3s, color 0.3s;
+
+
+  &:hover {
+    &:after {
+      transform: scaleX(1);
+      opacity: 1;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    border-radius: $iota-border-radius;
+    transform: scaleX(0.7);
+    opacity: 0;
+    transition: transform 0.8s, opacity 0.3s;
+  }
+}
+
+.btn-primary { @include btn-iota($color-primary); }
+.btn-secondary { @include btn-iota($color-secondary); }
+.btn-tertiary { @include btn-iota($color-tertiary); }
+.btn-tetrary { @include btn-iota($color-tetrary); }
+
+.btn-black { @include btn-iota($gray-darker); }
+.btn-dark { @include btn-iota($gray-dark); }
+.btn-gray { @include btn-iota($gray); }
+.btn-light { @include btn-iota($gray-lighter); }

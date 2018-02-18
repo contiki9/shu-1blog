@@ -1,0 +1,77 @@
+﻿// --------------------------------------------------
+//Base Color
+// --------------------------------------------------
+$color-bg:#FFF !default;//背景色
+$color-bg-light:#FBFBFB !default;//色付き背景色
+$color-bg-light-dark:#EFF4F6 !default;//色付き背景色
+$color-text: #3F3F3F !default;//基本文字色
+$color-text-light-dark: #636970 !default;//基本文字明るめ色2
+$color-text-light: #AAB1B9 !default;//基本文字明るめ色
+$color-main: #FF9916 !default;//基本メイン色
+$color-link: #006ACF !default;//基本リンク色
+$color-required: #FF1A1A !default;//必須項目の色
+$color-alert: #DE3C3C !default;//アラート関係の色
+$color-accent: #12B3AA !default;//基本アクセント色
+$color-accent2: #32C94E !default;//基本アクセント色2
+$color-border:#cfd8dc !default;//基本線色
+$color-border-light:#B4B4B4 !default;//線色明るめ
+$color-disable:#c5c7c8 !default;//非選択・選択不可など
+$color-table:#EFF4F6 !default;//テーブルのth背景
+
+// --------------------------------------------------
+//Gray Color
+// --------------------------------------------------
+$gray-lighter:#E6EAEF;
+$gray-light:#CED0DB;
+$gray:#6D6F7F;
+$gray-dark:#3F4351;
+$gray-darker:#252730;
+
+// --------------------------------------------------
+//Brand Color
+// --------------------------------------------------
+$brand-twitter:#1da1f2;
+$brand-facebook:#3b5998;
+$brand-google-plus:#dd4b39;
+
+// --------------------------------------------------
+//Font Size
+// --------------------------------------------------
+//単位はピクセル計算
+$font-xlrg:20;
+$font-lrg:18;
+$font-nml:16;
+$font-sml:12;
+$font-xsml:10;
+
+// --------------------------------------------------
+//// Easings
+// --------------------------------------------------
+$ease-in-cubic:cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$ease-out-cubic:cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-in-out-cubic:cubic-bezier(0.645, 0.045, 0.355, 1);
+$ease-in-out-expo:cubic-bezier(1, 0, 0, 1);
+$ease-out-back:cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$ease-out-quint:cubic-bezier(.23,1,.32,1);
+
+// --------------------------------------------------
+//Setting
+// --------------------------------------------------
+$container:1200px;//Containerサイズ
+$global-radius:4px !default;//サイトで良く使う角丸
+
+//breakpointサイズ
+//breakpointが１津の場合は’brk’を使用しています。
+$breakpoints: (
+  'brk': 'screen and (max-width: 640px)',
+  'sp': 'screen and (max-width: 400px)',
+  'tb': 'screen and (max-width: 768px)',
+  'pc': 'screen and (min-width: 641px)',
+  'min800': 'screen and (min-width: 801px)',
+  'wrap': 'screen and (max-width: 1200px)',
+  'max1400': 'screen and (max-width: 1400px)',
+  'max2000': 'screen and (max-width: 2000px)',
+) !default;
+
+
+

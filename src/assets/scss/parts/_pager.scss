@@ -1,0 +1,50 @@
+/*
+ * pager Style
+*/
+
+.c-pager {
+  @include cnt-radius(4px);
+  @include cnt-font-size(14);
+  border: 1px solid $color-link;
+  background: #FFF;
+  color: $color-link;
+  display: inline-block;
+  min-width: 2em;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  &:hover,&:active,&:focus {
+    text-decoration: none;
+    color: $color-link;
+    border:1px solid #FFF;
+  }
+  &.op-current {
+    background: $color-link;
+    color: #FFF;
+    &:hover,&:active,&:focus {
+      border:1px solid $color-link;
+      cursor: default;
+    }
+  }
+}
+
+.b-pager {
+  padding: 8px;
+  background: $color-bg-light-dark;
+  .w-pager {
+    @include flx-row;
+    @include flx-center;
+    @include flx-middle;
+    margin-bottom: -8*2px;
+    .c-pager {
+      margin-right: 8*2px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .c-pager {
+    margin-bottom:8*2px;
+  }
+}

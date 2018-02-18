@@ -1,0 +1,65 @@
+/*
+ * news Style
+*/
+
+/*
+---
+name: news
+tag:
+  - news
+  - list
+---
+
+ニュース用
+
+```jade
+ul.c-news
+  li.day 2000/00/00
+  li.text: a(href='#todo') ここにニュースの内容が入ります。
+```
+*/
+
+.c-news{
+  @include flx-row;
+  padding-bottom: .6em;
+  margin-bottom: .6em;
+  .day{
+    margin-right: .5em;
+  }
+  .text{
+  }
+}
+
+/*
+---
+tag:
+  - news
+  - list
+---
+
+```jade
+ul.c-news-line
+  li.day 2000/00/0000
+  li.text: a(href='#todo') ここにニュースの内容が入ります。
+```
+*/
+
+.b-news-line{
+  @include flx-row;
+  border-bottom:1px solid $color-border;
+  padding:1.2em .5em;
+  .day{
+    margin-right:1.5em;
+  }
+  .message{
+    @include flx-col;
+    a{
+      display: block;
+      line-height: 1.5;
+    }
+  }
+}
+
+
+
+

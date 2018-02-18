@@ -1,0 +1,16 @@
+/*
+ * Footer Style
+*/
+.c-footer-copy{
+  .copy-block {
+    text-align: center;
+    background: $color-text-light;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    color: #FFF;
+  }
+  .copy {
+    @include cnt-font-size(10);
+    margin-bottom: 0;
+  }
+}

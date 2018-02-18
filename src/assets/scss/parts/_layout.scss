@@ -1,0 +1,47 @@
+/*
+ * layout Style
+*/
+.c-layout-full-height{
+  min-height: 100vh;
+  position: relative;
+  @include flx-row;
+  > .w-global-footer-global-cp{
+    align-self: flex-end;
+  }
+}
+
+.b-layout-form-registration{
+  >.w-layout-section-input{
+    margin-bottom: 30px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  > .w-save-button{
+    margin-top:8*6px;
+    text-align: center;
+    padding-left:8*3px;
+    padding-right:8*3px;
+  }
+}
+
+.b-layout-form-area{
+  width:100%;
+  .l-column-select{
+    @include flx-row;
+    @include flx-bottom;
+    .l-column-3,.l-column-2{
+      padding-right: 15px;
+      input,textarea,select{
+        width:100%;
+        margin-bottom: 0;
+      }
+    }
+    .l-column-3{
+      @include flx-col-4;
+    }
+    .l-column-2{
+      @include flx-col-6;
+    }
+  }
+}

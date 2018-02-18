@@ -1,0 +1,66 @@
+/*
+ * Form Style
+*/
+%ex-input {
+  &.input {
+    margin-bottom: 0;
+    width: 100%;
+  }
+}
+
+%ex-input-select-style {
+  //radioとchecxbox用
+  &.op-check, &.op-radio {
+    @include flx-row;
+    @include flx-middle;
+    height: auto;
+    width: auto;
+    margin-right: 1em;
+    vertical-align: middle;
+    margin-bottom: 1.2em;
+    .name {
+      display: inline-block;
+      margin-bottom: 0;
+      font-weight: normal;
+    }
+    @extend %ex-input-check-radio;
+  }
+}
+
+.c-form-input-block {
+  @extend %ex-input-select-style;
+  .name {
+    @include cnt-font-size(14);
+    display: block;
+    margin-bottom: .5em;
+    text-align: left;
+    font-weight: normal;
+    &.op-name-light {
+      color: $color-text-light;
+    }
+    &.op-bold {
+      font-weight: bold;
+    }
+  }
+  textarea {
+    @extend %ex-textarea;
+  }
+  .input {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+  input, textarea {
+    @extend %ex-input;
+    margin-bottom: 0;
+  }
+}
+
+
+input[type=submit], input[type=reset], input[type=button] {
+  &.c-form-button {
+    min-width: 200px;
+  }
+}
+
+
+

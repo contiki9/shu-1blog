@@ -1,0 +1,19 @@
+/*
+ * Title Style
+*/
+.c-title{
+  @include cnt-font-size(24);
+  &.op-table{
+    padding-left: 10px;
+  }
+}
+
+.b-title-page-name{
+  @include cnt-font-size(30);
+  background: $color-bg-light;
+  padding-top:24px;
+  padding-bottom:24px;
+  .w-page-name{
+    @extend .c-container;
+  }
+}

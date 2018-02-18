@@ -1,0 +1,13 @@
+/*
+ * Icon Style
+*/
+.c-icon-circle{
+  @include flx-row;
+  @include flx-middle;
+  @include flx-center;
+  @include cnt-circle;
+  height:50px;
+  width:50px;
+  background: #FFF;
+  border:1px solid $color-border;
+}

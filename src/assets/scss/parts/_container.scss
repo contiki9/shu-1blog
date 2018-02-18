@@ -1,0 +1,27 @@
+/*
+ * Layout
+*/
+
+.c-container{
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 8*3px;
+  padding-right: 8*3px;
+  @include mq(){
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  &.op-short,&.op-single{
+    max-width: 800px;
+  }
+}
+
+.b-container-pop-up{
+  max-width:800px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px 30px;
+}
+
+

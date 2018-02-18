@@ -1,0 +1,29 @@
+/*
+ * text Style
+*/
+.c-text-notes{
+  @include cnt-font-size(12);
+  color: $color-text-light;
+  line-height: 1.2;
+  margin-bottom: 0;
+  a{
+    display: inline-block;
+    margin-right: .3em;
+    margin-left: .3em;
+    font-weight: bold;
+  }
+  p{
+    @include cnt-font-size(12);
+    color: $color-text-light;
+    line-height: 1.5;
+    margin-top: .5em;
+    margin-bottom: 0;
+  }
+}
+
+.c-text-follow{
+  color: $color-text-light;
+  text-align: center;
+  padding-top:16px;
+  padding-bottom:16px;
+}
