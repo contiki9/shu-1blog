@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "gulp.js",
-  "scripts": {
-    "postinstall": "gulp copy-vendor"
-  },
   "private": true,
   "author": "",
   "license": "ISC",
