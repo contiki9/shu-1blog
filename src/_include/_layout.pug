@@ -25,14 +25,22 @@ html(lang=pageLang)
             meta(property="og:title" content=site.name)
         meta(property="og:type" content=pageOgpType)
         meta(property="og:image" content=pageOgpImage)
+        meta(property='og:image:width', content='1200')
+        meta(property='og:image:height', content='630')
         meta(property="og:url" content=site.rootUrl + pageUrl)
         meta(property="og:description" content=pageDescription)
         meta(property="og:site_name" content=site.name)
         meta(property="og:locale" content=pageLang)
 
         //- OGP Twitter Cards
-        meta(name="twitter:card" content="summary")
-        meta(name="twitter:site" content="@maki_saki")
+        if pageOgpTitle
+            meta(name='twitter:text:title', content=pageOgpTitle + ' | ' + site.name)
+        else
+            meta(name='twitter:text:title', content=site.name)
+
+        meta(name='twitter:image', content=pageOgpImage)
+        meta(name='twitter:card', content='summary_large_image')
+        meta(name="twitter:creator" content="@maki_saki")
         //- /OGP Twitter Cards
         //- /OGP
 
