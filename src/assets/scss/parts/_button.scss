@@ -8,15 +8,15 @@
 
 %ex-button {
   @extend %ex-button-hover;
-  @include cnt-link(#FFF);
-  @include cnt-radius(2px);
+  @include cnt-link($color-text);
+  @include cnt-radius(0);
   text-align: center;
   background: $color-link;
   border: 1px solid $color-link;
   padding: .6em 1.5em;
   display: inline-block;
   border: none;
-  font-weight: normal;
+  font-weight: bold;
   cursor: pointer;
   &:hover, &:active, &:focus {
     text-decoration: none;
@@ -36,6 +36,10 @@
   }
   &.op-large {
     padding: 1em 2em;
+    @include cnt-radius(.3em);
+  }
+  &.op-small {
+    padding: .5em 1em;
     @include cnt-radius(.3em);
   }
   &.op-submit {
@@ -79,6 +83,29 @@
   @extend %ex-button;
 }
 
+.b-button {
+  @extend %ex-button;
+  .l-flex {
+    @include flx-row;
+  }
+  .w-icon {
+    margin-right: 8px;
+  }
+  .w-text {
+
+  }
+}
+
+body{
+  .mauticform-button-wrapper {
+    text-align: center;
+    .mauticform-button.btn-default {
+      @extend %ex-button;
+    }
+  }
+}
+
+
 input[type=submit], input[type=reset], input[type=button] {
   &.c-button {
     @extend %ex-button;
@@ -96,6 +123,7 @@ input[type=submit], input[type=reset], input[type=button] {
     border: 1px solid $color-link;
   }
 }
+
 .c-button-push-line, .c-button-push {
   @extend %ex-button-push;
   &:hover, &:active, &:focus {
@@ -143,10 +171,10 @@ input[type=submit], input[type=reset], input[type=button] {
 .c-button-full-radius {
   @extend %ex-button;
   @include cnt-radius(2em);
-  &.op-border{
+  &.op-border {
     background: #FFF;
     color: $color-link;
-    border:1px solid $color-link;
+    border: 1px solid $color-link;
   }
   .fa {
     display: inline-block;

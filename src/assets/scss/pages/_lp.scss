@@ -1,0 +1,36 @@
+/*
+ * LP Page Style
+*/
+.p-lp {
+
+}
+
+.p-lp--home {
+  .w-heaher {
+    margin-top: 8*4px;
+  }
+  .w-head-body {
+    text-align: center;
+    > .w-description {
+    }
+    > .w-bottom-button {
+      text-align: center;
+    }
+  }
+  .b-lp-footer {
+    margin-top: 8*10px;
+  }
+}
+
+.b-lp-footer {
+  .w-message {
+    text-align: center;
+    .message {
+      @include cnt-font-size(20);
+    }
+  }
+  .w-share {
+    margin-top: 8*5px;
+  }
+
+}

@@ -8,15 +8,15 @@ html(lang=pageLang)
             title #{site.name}
 
         meta(name="description" content=pageDescription)
-        meta(name="keywords" content=pageKeywords)
 
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         meta(name="format-detection" content="telephone=no")
 
-        //noindex
-        meta(name='robots', content='noindex,nofollow')
+        //-noindex
+        //-meta(name='robots', content='noindex,nofollow')
+
 
         //- OGP
         if pageOgpTitle
@@ -30,26 +30,29 @@ html(lang=pageLang)
         meta(property="og:site_name" content=site.name)
         meta(property="og:locale" content=pageLang)
 
-        //- OGP Facebook insights
-        meta(property="fb:admins" content="")
-        meta(property="fb:app_id" content="")
-        //- /OGP Facebook insights
         //- OGP Twitter Cards
         meta(name="twitter:card" content="summary")
-        meta(name="twitter:site" content="@")
+        meta(name="twitter:site" content="@maki_saki")
         //- /OGP Twitter Cards
         //- /OGP
 
         block mata
-
-        link(rel='shortcut icon', href='/favicon.ico', type='img/x-icon')
+        link(rel='icon', href='/assets/images/favicon.png',type='image/png')
         link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
         link(rel='stylesheet', href='/css/style.css')
         block link
 
-        script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js')
-        script(src='//cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js')
-        script(src='/assets/js/common.js')
+        // Global site tag (gtag.js) - Google Analytics
+        script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-37476229-16')
+        script.
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'UA-37476229-16');
+
+
         block script
 
     block body

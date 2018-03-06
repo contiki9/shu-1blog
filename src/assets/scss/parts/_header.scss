@@ -3,5 +3,13 @@
 */
 
 .b-header {
-
+  .w-logo {
+    margin-bottom: 8*4px;
+    .logo {
+      text-align: center;
+    }
+  }
+  .w-read {
+    text-align: center;
+  }
 }

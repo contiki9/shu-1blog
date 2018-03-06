@@ -46,10 +46,10 @@ tag:
   }
 }
 .c-box-notes{
-  @include cnt-font-size(14);
+  @include cnt-font-size(10);
   background: $color-table;
   line-height: 1.8;
-  padding: 15px;
+  padding: 8px;
   p{
     @include cnt-font-size(14);
     &:last-child{

@@ -107,3 +107,62 @@ select.c-tag{
     margin-right: 10px;
   }
 }
+
+.c-tag-list{
+  @include flx-row;
+  @include flx-middle;
+  margin-bottom: -8px;
+  li.list{
+    margin-bottom:8px;
+    &:after{
+      content: ',';
+      display: inline-block;
+      margin-right: 2px;
+      margin-left: 2px;
+    }
+    &:last-child{
+      margin-right: 0;
+      &:after{
+        content: '';
+        display: inline-block;
+        margin-right: 0px;
+        margin-left: 0px;
+      }
+    }
+  }
+}
+.b-tag-list{
+  @include flx-row;
+  @include flx-middle;
+  flex-wrap: nowrap;
+  .tag-icon{
+    margin-right:8px;
+  }
+}
+
+.b-list-flow{
+  .list{
+    @include flx-row;
+    flex-wrap: nowrap;
+    margin-bottom: 8*4px;
+    .w-flow-step{
+      margin-right: 8*2px;
+      .flow-step{
+        @include flx-row;
+        @include flx-middle;
+        @include flx-center;
+        min-width: 25px;
+        min-height:25px;
+        border: 2px solid $color-text;
+      }
+    }
+    .w-flow-text{
+      p{
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+
+  }
+}

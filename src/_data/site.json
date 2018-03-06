@@ -1,7 +1,5 @@
 {
-  "name": "サイトの名前",
-  "description": "サイトの概要",
-  "keywords": "サイトのキーワード1, サイトのキーワード2",
-  "rootUrl": "http://example.com/",
-  "ogpImage": "http://example.com/images/og-image.jpg"
+  "name": "週１でブログ更新する会",
+  "rootUrl": "https://shu-1blog.com/",
+  "ogpImage": "https://shu-1blog.com/assets/images/ogp.png"
 }

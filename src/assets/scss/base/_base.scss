@@ -3,7 +3,7 @@
 */
 body, html {
   @extend %ex-font-family;
-  @include cnt-font-size($font-nml,16);
+  @include cnt-font-size($font-nml);
   color: $color-text;
   min-height:100vh;
 }
