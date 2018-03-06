@@ -111,7 +111,7 @@ block body
                                             .name #{name}
                                             .w-sns
                                                 .tw
-                                                    a(href=twUrl)
+                                                    a(href=twUrl,target='_blank')
                                                         img(src=imageDir + 'icons/sns-user-tw.svg',alt=name)
                                         .w-member-tag
                                             .b-tag-list
@@ -121,14 +121,16 @@ block body
                                                     for item, index in tag
                                                         li.list
                                                             span #{item}
+
                                     .l-flex-block3
                                         .w-member-button
-                                            a(src='#{blogUrl}',target='_blank').b-button.op-small
+                                            a(href=blogUrl,target='_blank').b-button.op-small
                                                 .l-flex
                                                     .w-icon
                                                         img(src=imageDir + 'icons/blog-home.svg',alt='ブログ').icon
                                                     .w-text
                                                         .text ブログを見る
+
                         //コンチ
                         - var iconSrc = imageDir+'user/conti.png';
                         - var blogUrl = 'https://blog.cntlog.net/';
@@ -208,7 +210,7 @@ block body
                 .w-share
                     ul.c-list-share
                         li
-                            a(href= 'http://twitter.com/share?url=https://shu-1blog.com/')
+                            a(href= 'http://twitter.com/share?url=https://shu-1blog.com/&hashtags=週1ブログ会')
                                 img(src=imageDir + 'icons/share-icon-tw.svg',alt='twitterでシェア')
                         li
                             a(href= 'https://www.facebook.com/sharer/sharer.php?u=https://shu-1blog.com/')
