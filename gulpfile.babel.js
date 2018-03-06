@@ -1,37 +1,37 @@
-﻿var gulp = require('gulp');
+﻿import gulp from 'gulp'
 
 //scss
-var sass = require('gulp-sass');
-var sassGlob = require("gulp-sass-glob");
-var pleeease = require('gulp-pleeease');
-var plumber = require('gulp-plumber');
+import sass from 'gulp-sass';
+import sassGlob from 'gulp-sass-glob';
+import pleeease from 'gulp-pleeease';
+import plumber from 'gulp-plumber';
 
 //pug
-var pug = require('gulp-pug');
-var fs = require('fs');
-var data = require('gulp-data');
-var path = require('path');
+import pug from 'gulp-pug';
+import fs from 'fs';
+import data from 'gulp-data';
+import path from 'path';
 
 
 //画像圧縮
-var imagemin = require('gulp-imagemin');
-var pngquant = require('imagemin-pngquant');
+import imagemin from 'gulp-imagemin';
+import pngquant from 'imagemin-pngquant';
 
 //JS圧縮
-var uglify = require('gulp-uglify');
+import uglify from 'gulp-uglify';
 
 //browserSync
-var browserSync = require('browser-sync');
+import browserSync from 'browser-sync';
 
 //htmlCheck
-var htmlhint = require("gulp-htmlhint");
+import htmlhint from 'gulp-htmlhint';
 
 // Utility
-var notify = require("gulp-notify");
-var watch = require("gulp-watch");
-var runSequence = require('run-sequence');
-var del = require('del');
-var rename = require("gulp-rename");
+import notify from 'gulp-notify';
+import watch from 'gulp-watch';
+import runSequence from 'run-sequence';
+import del from 'del';
+import rename from 'gulp-rename';
 
 
 ////////////
@@ -39,26 +39,26 @@ var rename = require("gulp-rename");
 ///////////
 
 //開発用ディレクトリ
-var develop = {
+const develop = {
     'root': './src/',
     'assets': './src/assets/'
 };
 
 //コンパイル先
-var release = {
+const release = {
     'root': './dist/',
     'css': './dist/css/',
     'assets': './dist/assets/'
 };
 
 // Defining base pathes
-var paths = {
+const paths = {
     node: './node_modules/',
 };
 
 // browser-sync watched files
 // automatically reloads the page when files changed
-var browserSyncWatchFiles = [
+const browserSyncWatchFiles = [
     develop.root + './**/*.pug',
     develop.assets + '**/scss/*.scss',
     release.root + '**/css/*.css',
@@ -70,7 +70,7 @@ var browserSyncWatchFiles = [
 
 // browser-sync options
 // see: https://www.browsersync.io/docs/options/
-var browserSyncOptions = {
+const browserSyncOptions = {
     //proxy: "localhost/wordpress/",
     notify: false,
     server: {
@@ -80,7 +80,7 @@ var browserSyncOptions = {
     open:false//オプション
 };
 
-var AUTOPREFIXER_BROWSERS = [
+const AUTOPREFIXER_BROWSERS = [
     // @see https://github.com/ai/browserslist#browsers
     // Major Browsers（主要なブラウザの指定）
     'last 2 version', // （Major Browsersの）最新2バージョン
@@ -124,7 +124,7 @@ gulp.task('sass', function () {
 
 gulp.task('pug', function () {
     // JSONファイルの読み込み。
-    var locals = {
+    const locals = {
         'site': JSON.parse(fs.readFileSync(develop.root + '_data/' + 'site.json')),
         'data': JSON.parse(fs.readFileSync(develop.root + '_data/' + 'data.json'))
     }
