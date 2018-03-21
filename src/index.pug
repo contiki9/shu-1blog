@@ -232,12 +232,9 @@ block body
                     m.parentNode.insertBefore(a, m)
                 })(window, document, 'script', 'https://shu1-blog.mautic.net/mtc.js', 'mt');
                 mt('send', 'pageview');
-
-
-
-
-
-
-
-
-
+            script.
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                  navigator.serviceWorker.register('./sw.js')
+                })
+              }

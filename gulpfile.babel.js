@@ -33,6 +33,8 @@ import runSequence from 'run-sequence';
 import del from 'del';
 import rename from 'gulp-rename';
 
+// workbox
+import workboxBuild from 'workbox-build';
 
 ////////////
 // config
@@ -308,6 +310,19 @@ gulp.task('heroku', function(callback) {
     );
 });
 
+// service worker
+gulp.task('sw', () => {
+  console.log('--------- update service worker ----------');
+  return workboxBuild.injectManifest({
+    swSrc: 'src/sw.js',
+    swDest: 'dist/sw.js',
+    globDirectory: 'dist',
+    globPatterns: [
+      '**\/*.{js,css,html,png,ttf,svg}',
+    ]
+  });
+});
+
 
 // gulpのデフォルト
 gulp.task('default', ['output','browser-sync'], function () {
@@ -315,6 +330,7 @@ gulp.task('default', ['output','browser-sync'], function () {
     gulp.watch(develop.assets + 'scss/**/*.scss', ['re-sass']);
     gulp.watch(develop.assets + 'images/**/*', ['image-min']);
     gulp.watch(develop.assets + 'js/**/*', ['uglify']);
+    gulp.watch(develop.assets + 'sw.js', ['sw']);
     gulp.watch('./**/*.html', ['bs-reload']);
 });
 // gulpのデフォルト
@@ -323,5 +339,6 @@ gulp.task('sync', ['browser-sync'], function () {
     gulp.watch(develop.assets + 'scss/**/*.scss', ['re-sass']);
     gulp.watch(develop.assets + 'images/**/*', ['image-min']);
     gulp.watch(develop.assets + 'js/**/*', ['uglify']);
+    gulp.watch(develop.assets + 'sw.js', ['sw']);
     gulp.watch('./**/*.html', ['bs-reload']);
 });

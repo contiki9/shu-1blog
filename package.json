@@ -42,6 +42,7 @@
     "imagemin-pngquant": "^5.0.0",
     "path": "^0.12.7",
     "require-dir": "^0.3.0",
-    "run-sequence": "^2.2.0"
+    "run-sequence": "^2.2.0",
+    "workbox-build": "^3.0.0"
   }
 }
