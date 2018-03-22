@@ -66,6 +66,7 @@ const browserSyncWatchFiles = [
     release.root + '**/css/*.css',
     release.root + '**/js/*.js',
     release.root + '**/*.php',
+    release.root + './*.html',
     release.root + '**/*.html'
 ];
 
@@ -294,6 +295,7 @@ gulp.task('output', function (callback) {
     return runSequence(
         'release-clean',
         'copy',
+        'sw',
         ['pug', 'sass', 'image-min', 'uglify'],
         'check-html',
         'bs-reload',
@@ -334,7 +336,7 @@ gulp.task('default', ['output','browser-sync'], function () {
     gulp.watch('./**/*.html', ['bs-reload']);
 });
 // gulpのデフォルト
-gulp.task('sync', ['browser-sync'], function () {
+gulp.task('sync', ['sw', 'browser-sync'], function () {
     gulp.watch(develop.root + '**/*.pug', ['re-pug']);
     gulp.watch(develop.assets + 'scss/**/*.scss', ['re-sass']);
     gulp.watch(develop.assets + 'images/**/*', ['image-min']);
