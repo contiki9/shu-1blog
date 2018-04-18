@@ -295,8 +295,8 @@ gulp.task('output', function (callback) {
     return runSequence(
         'release-clean',
         'copy',
-        'sw',
         ['pug', 'sass', 'image-min', 'uglify'],
+        'sw',
         'check-html',
         'bs-reload',
         callback
