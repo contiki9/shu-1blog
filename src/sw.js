@@ -9,7 +9,6 @@ function initPrecaching() {
 }
 
 function registerRoutes() {
-  workbox.routing.registerNavigationRoute("/index.html")
   workbox.routing.registerRoute(
     new RegExp('.*\.js'),
     workbox.strategies.networkFirst()
