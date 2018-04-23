@@ -7,7 +7,8 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "start": "gulp sync"
+    "start": "gulp sync",
+    "build": "gulp output"
   },
   "dependencies": {
     "Skeleton-Sass": "WhatsNewSaes/Skeleton-Sass",
